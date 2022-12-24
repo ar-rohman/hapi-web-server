@@ -39,6 +39,14 @@ const routes = [
     },
   },
   {
+    method: 'POST',
+    path: '/login',
+    handler: (request, h) => {
+      const { username, password } = request.payload;
+      return `welcome, ${username}!`;
+    },
+  },
+  {
     method: '*',
     path: '/{any*}',
     handler: (request, h) => {
